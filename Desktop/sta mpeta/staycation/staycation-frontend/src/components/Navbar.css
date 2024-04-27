@@ -1,0 +1,38 @@
+.navbar {
+  box-sizing: border-box;
+  min-height: 100px;
+  background-color: #FFA500; /* Orange */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.links1, .links2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.links1 {
+  width: 500px;
+}
+
+.links2 {
+  width: 300px;
+}
+
+.links1 .link, .links2 .link {
+  text-decoration: none;
+  color: #FFFFFF; /* White */
+  border-radius: 5px;
+  padding: 5px 15px;
+  background-color: #240bc9; /* Dark Blue */
+}
+
+body {
+  background-color: #F5F5F5; /* Light Gray */
+  color: #333333; /* Dark Gray */
+}

@@ -1,0 +1,28 @@
+/* homepage.css */
+
+/* Style for the navbar */
+.navbar {
+    background-color: #333; /* Dark background color */
+    color: #fff; /* Text color */
+    padding: 10px; /* Add some padding */
+  }
+  
+  /* Style for the logo/title */
+  .logo {
+    font-size: 32px; /* Increase font size for larger appearance */
+    font-weight: bold; /* Make it bold */
+    margin-right: 20px; /* Add some space between the logo and links */
+  }
+  
+  /* Style for the links inside the navbar */
+  .navbar a {
+    color: #fff; /* Text color */
+    text-decoration: none; /* Remove underlines */
+    margin-right: 20px; /* Add some space between links */
+  }
+  
+  /* Style for the active link */
+  .navbar a.active {
+    font-weight: bold; /* Make the active link bold */
+  }
+  
