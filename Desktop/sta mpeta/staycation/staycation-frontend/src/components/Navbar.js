@@ -1,15 +1,19 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom"; // Allows us to link to different routes
-import { jwtDecode } from "jwt-decode"; // Allows us to decode the token
+import { Link, useNavigate } from "react-router-dom";
+import jwtDecode from "jwt-decode";
 import "./Navbar.css";
 
 export const Navbar = () => {
   let navigate = useNavigate();
   let token;
-  let decoded;
   if (localStorage.getItem("token")) {
     token = localStorage.getItem("token");
-    decoded = jwtDecode(token);
+    try {
+      jwtDecode(token);
+    } catch (error) {
+      console.error("Error decoding token:", error);
+      // Handle the error (e.g., redirect to login page)
+    }
   }
   function handleLogout() {
     if (localStorage.getItem("token")) {
@@ -25,11 +29,11 @@ export const Navbar = () => {
     <div className="navbar">
       <h1>StayCation</h1>
       {token ? (
-        <div className="links1">
+        <div className="links">
           <Link to="/" className="link">
             Home
           </Link>
-          <Link to="/book-hotel" className="link">
+          <Link to="/book-a-hotel" className="link">
             Create Recipe
           </Link>
           <Link to="/payment-options" className="link">
@@ -40,7 +44,7 @@ export const Navbar = () => {
           </Link>
         </div>
       ) : (
-        <div className="links2">
+        <div className="links">
           <Link to="/" className="link">
             Home
           </Link>
@@ -50,7 +54,6 @@ export const Navbar = () => {
           <Link to="/register" className="link">
             Register
           </Link>
-          
         </div>
       )}
     </div>

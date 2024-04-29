@@ -1,14 +1,17 @@
 import React from 'react';
-import './homepage.css'; 
+import { Link } from 'react-router-dom'; 
+import './Homepage.css';
 
 const Home = () => {
   return (
-    <div className="navbar"> {/* Add the "navbar" class */}
-      <div className="logo">StayCation</div> {/* Add StayCation as logo/title */}
-      <a href="/" className="active">Home</a> {/* Add the "active" class */}
-      <a href="/about">About</a>
-      <a href="/book-a-room">Book a Room</a> {/* Changed link text for clarity */}
-      {/* Add more links as needed */}
+    <div className="homepage-container"> 
+      <div className="logo">StayCation</div> 
+      <Link to="/" className="nav-link">Home</Link> 
+      <Link to="/hotels" className="nav-link">Hotels</Link> 
+      <Link to="/book-a-room" className="nav-link">Book a Room</Link> 
+      <Link to="/login" className="nav-link">Log In</Link> 
+      <Link to="/register" className="nav-link">Register</Link> 
+      <Link to="/logout" className="nav-link">Log Out</Link> 
     </div>
   );
 }

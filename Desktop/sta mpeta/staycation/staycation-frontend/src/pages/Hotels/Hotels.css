@@ -1,0 +1,34 @@
+/* Styles for hotels page */
+
+.hotels-container {
+    padding: 20px;
+  }
+  
+  .hotel-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .hotel-card img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .hotel-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .hotel-description {
+    color: #666;
+  }
+  
+  .hotel-price {
+    font-size: 18px;
+    color: #008000;
+  }
+  

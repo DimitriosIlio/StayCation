@@ -5,24 +5,55 @@
     background-color: #333; /* Dark background color */
     color: #fff; /* Text color */
     padding: 10px; /* Add some padding */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Align items evenly */
+    align-items: center; /* Center items vertically */
   }
   
   /* Style for the logo/title */
   .logo {
-    font-size: 32px; /* Increase font size for larger appearance */
+    font-size: 24px; /* Adjust font size */
     font-weight: bold; /* Make it bold */
-    margin-right: 20px; /* Add some space between the logo and links */
   }
   
-  /* Style for the links inside the navbar */
-  .navbar a {
+  /* Style for the navigation links */
+  .nav-link {
     color: #fff; /* Text color */
     text-decoration: none; /* Remove underlines */
     margin-right: 20px; /* Add some space between links */
   }
   
   /* Style for the active link */
-  .navbar a.active {
+  .nav-link.active {
     font-weight: bold; /* Make the active link bold */
   }
   
+  /* homepage.css */
+
+.homepage-container {
+  background-image: url('C:\Users\User\Desktop\sta mpeta\staycation\staycation-frontend\pexels-pixabay-258154.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Adjust the height as needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff; /* Set text color for better readability */
+}
+
+.logo {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
