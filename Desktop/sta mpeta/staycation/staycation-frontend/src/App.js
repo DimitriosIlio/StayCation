@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Homepage from './pages/Homepage/Homepage'; 
 import Hotels from './pages/Hotels/Hotels'; 
 import BookARoom from './pages/BookARoom/BookARoom'; 
@@ -9,12 +9,12 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Switch>
-          <Route exact path="/" component={Homepage} /> 
-          <Route path="/hotels" component={Hotels} /> 
-          <Route path="/book-a-room" component={BookARoom} /> 
+        <Routes>
+          <Route exact path="/" element={<Homepage />} /> 
+          <Route path="/hotels" element={<Hotels />} /> 
+          <Route path="/book-a-room" element={<BookARoom />} /> 
           {/* Add more routes for other pages */}
-        </Switch>
+        </Routes>
       </div>
     </Router>
   );
