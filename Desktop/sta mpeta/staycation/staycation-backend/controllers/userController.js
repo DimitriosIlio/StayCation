@@ -1,3 +1,4 @@
+// userController.js
 const User = require('../models/userModel');
 
 exports.register = async (req, res) => {
@@ -57,6 +58,19 @@ exports.updateProfile = async (req, res) => {
     res.json({ message: 'User profile updated successfully' });
   } catch (error) {
     console.error('Error updating user profile:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+};
+
+exports.deleteUser = async (req, res) => {
+  try {
+    // Find the user by ID and delete it from the database
+    await User.findByIdAndDelete(req.user._id);
+
+    // Return success response
+    res.json({ message: 'User deleted successfully' });
+  } catch (error) {
+    console.error('Error deleting user:', error);
     res.status(500).json({ message: 'Internal server error' });
   }
 };
