@@ -1,9 +1,9 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import jwtDecode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
  import "./Navbar.css"; 
 
-export const Navbar = () => {
+ const Navbar = () => {
   let navigate = useNavigate();
   let token;
   if (localStorage.getItem("token")) {
@@ -59,3 +59,5 @@ export const Navbar = () => {
     </div>
   );
 };
+
+export default Navbar;

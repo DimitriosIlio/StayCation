@@ -1,8 +1,7 @@
-// Frontend (React)
 import React, { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 
-const CheckoutForm = () => {
+const CheckoutForm = ({ clientSecret }) => {
   const [loading, setLoading] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
@@ -33,3 +32,5 @@ const CheckoutForm = () => {
     </form>
   );
 };
+
+export default CheckoutForm;
