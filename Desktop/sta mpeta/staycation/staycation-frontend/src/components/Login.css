@@ -1,13 +1,15 @@
-html, body, .App, #root{
+html, body, .App, #root {
     height: 100%;
 }
-.loginWraper{
+
+.loginWrapper { /* Corrected class name */
     box-sizing: border-box;
     width: 100%;
     padding: 100px;
     height: 100%;
 }
-.loginForm{
+
+.loginForm {
     border-radius: 15px;
     width: 400px;
     margin: auto;
@@ -21,12 +23,14 @@ html, body, .App, #root{
     background-color: #c6d4d2;
     font-weight: bold;
 }
-.loginForm .element{
+
+.loginForm .element {
     padding: 15px;
     display: flex;
     flex-direction: column;
 }
-input{
+
+input {
     margin-top: 10px;
     background-color: #c6d4d2;
     border-radius: 5px;

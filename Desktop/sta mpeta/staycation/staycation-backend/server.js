@@ -10,7 +10,7 @@ app.use(express.json());
 
 // Connect to MongoDB
 mongoose.connect(
-  "mongodb+srv://dimitriosilio:BeouJhaeXJeNVUn2@cluster0.64tplbo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+  "mongodb+srv://dimitriosilio:Fs4qVPtn1I0NuHQc@cluster0.64tplbo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
 

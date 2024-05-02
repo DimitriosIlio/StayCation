@@ -33,11 +33,11 @@ import { jwtDecode } from "jwt-decode";
           <Link to="/" className="link">
             Home
           </Link>
-          <Link to="/book-a-hotel" className="link">
-            Create Recipe
+          <Link to="/book-a-room" className="link">
+            Book a Room
           </Link>
-          <Link to="/payment-options" className="link">
-            Saved Recipes
+          <Link to="/Hotels" className="link">
+            Hotels
           </Link>
           <Link onClick={handleLogout} to="/" className="link">
             Logout

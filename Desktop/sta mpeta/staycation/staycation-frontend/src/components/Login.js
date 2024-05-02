@@ -1,30 +1,41 @@
-import { useState } from "react"; // Allows us to store values in state
-import axios from "axios"; // Connection to database
-import { useNavigate } from "react-router-dom"; // Allows us to link to different routes
-import "./Login.css"
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import "./Login.css";
 
-
-
-  const Login = () => {
+const Login = () => {
+  const [email, setEmail] = useState(""); // Add state for email
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
   const handleLogin = async (event) => {
     event.preventDefault();
+    setLoading(true);
     try {
-      let user = { username, password };
+      if (!username || !password || !email) { // Check if email is empty
+        setError("Please enter username, email, and password");
+        setLoading(false);
+        return;
+      }
+      let user = { email, username, password }; // Include email in user object
       let res = await axios.post("http://localhost:4000/auth/login", user);
       let token = res.data.token;
       localStorage.setItem("token", token);
       console.log(res.data.message);
-      navigate("/dashboard"); // Redirect to dashboard after successful login
+      navigate("/dashboard");
     } catch (error) {
-      setError("Invalid username or password"); // Set error message for display
+      if (error.response && error.response.status === 401) {
+        setError("Invalid username or password");
+      } else {
+        setError("An error occurred. Please try again later.");
+      }
       console.error("Error logging in:", error);
     }
+    setLoading(false);
   };
 
   return (
@@ -33,6 +44,10 @@ import "./Login.css"
         <form className="loginForm" onSubmit={handleLogin}>
           <h2>Login</h2>
           <div className="element">
+            <label htmlFor="email">Email:</label> {/* Add email input field */}
+            <input type="email" value={email} id="email" onChange={(e) => setEmail(e.target.value)} />
+          </div>
+          <div className="element">
             <label htmlFor="username">Username:</label>
             <input type="text" value={username} id="username" onChange={(e) => setUsername(e.target.value)} />
           </div>
@@ -40,8 +55,8 @@ import "./Login.css"
             <label htmlFor="password">Password:</label>
             <input type="password" value={password} id="password" onChange={(e) => setPassword(e.target.value)} />
           </div>
-          {error && <p className="error">{error}</p>} {/* Display error message if there's an error */}
-          <button type="submit">Login</button>
+          {error && <p className="error">{error}</p>}
+          <button type="submit" disabled={loading}>{loading ? "Logging in..." : "Login"}</button>
         </form>
       </div>
     </div>
