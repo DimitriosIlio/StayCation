@@ -5,13 +5,12 @@ const adminRoutes = require('./routes/adminRoutes');
 
 const app = express();
 
-// Middleware and other setup code...
+// Middleware and other setup code
 app.use(express.json());
 
 // Connect to MongoDB
 mongoose.connect(
-  "mongodb+srv://dimitriosilio:Fs4qVPtn1I0NuHQc@cluster0.64tplbo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
-  { useNewUrlParser: true, useUnifiedTopology: true }
+  "mongodb+srv://dimitriosilio:ZlnBJfYB6kY3FtCv@cluster0.d2dlet6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 );
 
 // Use user routes
