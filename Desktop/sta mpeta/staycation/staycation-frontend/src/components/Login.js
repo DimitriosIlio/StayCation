@@ -29,10 +29,10 @@ const Login = () => {
       let token = res.data.token;
       localStorage.setItem("token", token);
       console.log(res.data.message);
-      navigate("/hotels");
+      navigate("/");
     } catch (error) {
       if (error.response && error.response.status === 401) {
-        setError("Invalid username or password");
+        setError("Invalid email/username or password");
       } else {
         setError("An error occurred. Please try again later.");
       }

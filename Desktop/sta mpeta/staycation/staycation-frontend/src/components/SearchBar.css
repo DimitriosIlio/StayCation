@@ -4,7 +4,8 @@
   display: flex;
   align-items: center;
   justify-content: center; /* Center horizontally */
-  height: 100vh; /* Set height to fill the entire viewport */
+  height: 30vh; /* Set height to fill the entire viewport */
+  overflow: auto;
 }
 
 .search-bar {
@@ -13,6 +14,12 @@
   padding: 15px;
   background-color: #f0f0f0;
   border-radius: 10px;
+}
+
+.search-bar-input-wrapper{
+display:flex ;
+flex-direction: column;
+align-self:self-end;
 }
 
 .search-bar-input {
@@ -30,4 +37,5 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  align-self:self-end;
 }

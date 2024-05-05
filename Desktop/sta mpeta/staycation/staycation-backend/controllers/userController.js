@@ -1,5 +1,5 @@
 // userController.js
-
+const jwt = require("jsonwebtoken");
 const bcrypt = require('bcrypt');
 const User = require('../models/userModel');
 
@@ -40,27 +40,37 @@ exports.login = async (req, res) => {
   // res.status(200).json({ message: 'Login successful' });
 
   try {
+
     const { email, password, username } = req.body;
 
-    // Find admin by username
+    // Find user by username
     const user = await User.findOne({ username });
-
-    // Check if admin exists
+    // Check if user exists
     if (!user) {
-      return res.status(404).json({ message: 'User not found' });
+      return res.status(401).json({ message: 'User not found' });
+    }
+
+    const emailExists = await User.findOne({ email });
+    if (!emailExists) {
+      return res.status(401).json({ message: 'Email not found' });
     }
 
     // Check if password is correct
-    const isPasswordValid = await user.isValidPassword(password);
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+
     if (!isPasswordValid) {
       return res.status(401).json({ message: 'Invalid password' });
     }
 
+    // const isPasswordValid = await bcrypt.compare(password, user.password); // isValidPassword exists???
+
     // Generate JWT token
-    const token = admin.generateAuthToken();
+    const token = jwt.sign({ id: user._id }, "secret");
+    // res.json({ token, userID: user._id, message: "User login successfully!" });
+    // const token = user.generateAuthToken(); // generateAuthToken exists??
 
     // Return token and admin data
-    res.json({ token, admin });
+    res.status(200).json({ token, user, message: "User login successfully!" });
   } catch (error) {
     console.error('Error logging in admin:', error);
     res.status(500).json({ message: 'Internal server error' });
