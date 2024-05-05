@@ -1,4 +1,4 @@
-/* login.js */
+// /* login.js */
 
 import React, { useState } from "react";
 import axios from "axios";
@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 const Login = () => {
-  const [email, setEmail] = useState(""); // Add state for email
+  const [email, setEmail] = useState(""); 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -18,6 +18,7 @@ const Login = () => {
     event.preventDefault();
     setLoading(true);
     try {
+      console.log('here')
       if (!username || !password || !email) { // Check if email is empty
         setError("Please enter username, email, and password");
         setLoading(false);
@@ -28,7 +29,7 @@ const Login = () => {
       let token = res.data.token;
       localStorage.setItem("token", token);
       console.log(res.data.message);
-      navigate("/dashboard");
+      navigate("/hotels");
     } catch (error) {
       if (error.response && error.response.status === 401) {
         setError("Invalid username or password");

@@ -34,6 +34,38 @@ console.log(username,email,password)
 exports.login = async (req, res) => {
   // Logic for user login
   // This method should be similar to the login method in the adminController.js file
+  // const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+
+  // Return a 200 OK message along with the token
+  // res.status(200).json({ message: 'Login successful' });
+
+  try {
+    const { email, password, username } = req.body;
+
+    // Find admin by username
+    const user = await User.findOne({ username });
+
+    // Check if admin exists
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    // Check if password is correct
+    const isPasswordValid = await user.isValidPassword(password);
+    if (!isPasswordValid) {
+      return res.status(401).json({ message: 'Invalid password' });
+    }
+
+    // Generate JWT token
+    const token = admin.generateAuthToken();
+
+    // Return token and admin data
+    res.json({ token, admin });
+  } catch (error) {
+    console.error('Error logging in admin:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+  
 };
 
 exports.getProfile = async (req, res) => {
