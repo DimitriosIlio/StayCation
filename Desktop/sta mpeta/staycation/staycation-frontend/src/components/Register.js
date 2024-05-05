@@ -1,3 +1,6 @@
+/*Register.js*/
+
+
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -22,7 +25,7 @@ const Register = () => {
     setLoading(true);
     try {
       let user = { username, email, password };
-      let res = await axios.post("http://localhost:4000/auth/register", user);
+      let res = await axios.post("http://localhost:5000/api/users/register", user);
       if (res && res.data) {
         console.log(res.data.message);
         console.log(res.data);

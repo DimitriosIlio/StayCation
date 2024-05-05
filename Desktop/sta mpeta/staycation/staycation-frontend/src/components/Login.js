@@ -1,3 +1,5 @@
+/* login.js */
+
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -22,7 +24,7 @@ const Login = () => {
         return;
       }
       let user = { email, username, password }; // Include email in user object
-      let res = await axios.post("http://localhost:4000/auth/login", user);
+      let res = await axios.post("http://localhost:5000/api/users/login", user);
       let token = res.data.token;
       localStorage.setItem("token", token);
       console.log(res.data.message);

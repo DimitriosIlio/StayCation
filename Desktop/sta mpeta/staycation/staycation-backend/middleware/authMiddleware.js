@@ -1,10 +1,9 @@
-// authMiddleware.js
 const jwt = require('jsonwebtoken');
 const User = require('../models/userModel');
 const Admin = require('../models/adminModel');
 
 // Middleware function to verify user authentication
-exports.verifyUser = async (req, res, next) => {
+const verifyUser = async (req, res, next) => {
   try {
     // Extract token from request headers
     const token = req.headers.authorization.split(' ')[1];
@@ -28,7 +27,7 @@ exports.verifyUser = async (req, res, next) => {
 };
 
 // Middleware function to verify admin authentication
-exports.verifyAdmin = async (req, res, next) => {
+const verifyAdmin = async (req, res, next) => {
   try {
     // Extract token from request headers
     const token = req.headers.authorization.split(' ')[1];
@@ -49,4 +48,10 @@ exports.verifyAdmin = async (req, res, next) => {
   } catch (error) {
     res.status(401).json({ message: 'Unauthorized' });
   }
+};
+
+// Export the middleware functions
+module.exports = {
+  verifyUser,
+  verifyAdmin
 };

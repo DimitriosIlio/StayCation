@@ -1,22 +1,26 @@
 // userController.js
+
+const bcrypt = require('bcrypt');
 const User = require('../models/userModel');
 
-exports.register = async (req, res) => {
+/* exports.register = async (req, res) => {
   try {
+    console.log(req.body)
     // Extract username, email, and password from request body
     const { username, email, password } = req.body;
-
+console.log(username,email,password)
     // Check if the username or email already exists
-    const existingUser = await User.findOne({ $or: [{ username }, { email }] });
+    const existingUser = await User.findOne({username:username})
+    //console.log(existingUser)
     if (existingUser) {
       return res.status(400).json({ message: 'Username or email already exists' });
     }
 
     // Create a new user instance
-    const newUser = new User({ username, email, password });
+    //const newUser = new User({ username, email, password });
 
     // Save the user to the database
-    await newUser.save();
+    //await newUser.save();
 
     // Return success response
     res.status(201).json({ message: 'User registered successfully' });
@@ -25,6 +29,7 @@ exports.register = async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 };
+ */
 
 exports.login = async (req, res) => {
   // Logic for user login
@@ -76,3 +81,29 @@ exports.deleteUser = async (req, res) => {
 };
 
 // Add more controller methods as needed
+
+
+exports.register = async (req, res) => {
+  try {
+    console.log("hi")
+    console.log(req.body)
+    let { username, email, password } = req.body;
+    if (!email || !username || !password) {
+      return res.send({ msg: "All data are  required" });
+    }
+    let oldUser = await User.findOne({ email });
+    if (oldUser) {
+      return res.send({
+        msg: "user already exist please login or register with a new email",
+      });
+    }
+
+    let hashPassword = await bcrypt.hash(password, 10);
+    // console.log(hashPassword);
+    await User.create({ username, email, password: hashPassword });
+    return res.send({ msg: "Registered successfully" });
+  } catch (error) {
+    console.log(error);
+    return res.send({ msg: "Internal server error , can not register......" });
+  }
+};
