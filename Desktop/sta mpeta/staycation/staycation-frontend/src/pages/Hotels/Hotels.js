@@ -6,7 +6,7 @@ const Hotels = () => {
     <div className="hotels-container">
       <h1>Hotels</h1>
       <div className="hotel">
-        <h2>Hotel A</h2>
+        <h2>Metropolitan Suites</h2>
         <p>Description of Hotel A...</p>
         <p>Location: Downtown area</p>
         <p>Rating: 4.5/5</p>
@@ -14,7 +14,7 @@ const Hotels = () => {
         <p>Amenities: Free Wi-Fi, Gym, Restaurant</p>
       </div>
       <div className="hotel">
-        <h2>Hotel B</h2>
+        <h2>Oceanic Retreat Resort</h2>
         <p>Description of Hotel B...</p>
         <p>Location: Beachfront property</p>
         <p>Rating: 4.7/5</p>
@@ -22,7 +22,7 @@ const Hotels = () => {
         <p>Amenities: Swimming pool, Spa, Bar</p>
       </div>
       <div className="hotel">
-        <h2>Hotel C</h2>
+        <h2>Skyline View Hotel</h2>
         <p>Description of Hotel C...</p>
         <p>Location: City center</p>
         <p>Rating: 4.2/5</p>
@@ -30,7 +30,7 @@ const Hotels = () => {
         <p>Amenities: Free breakfast, Business center, Concierge</p>
       </div>
       <div className="hotel">
-        <h2>Hotel D</h2>
+        <h2>Sunset Haven Resort</h2>
         <p>Description of Hotel D...</p>
         <p>Location: Scenic location</p>
         <p>Rating: 4.6/5</p>

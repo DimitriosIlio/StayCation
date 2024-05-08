@@ -1,38 +1,43 @@
 /* Styles for hotels page */
 
 .hotels-container {
-    padding: 20px;
-  }
-  
-  .hotel-card {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .hotel-card img {
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
-  
-  .hotel-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .hotel-description {
-    color: #666;
-  }
-  
-  .hotel-price {
-    font-size: 18px;
-    color: #008000;
-  }
-  
-  body {
-    background-image: url('/pexels-pixabay-258154.jpg');
-  }
-  
+  padding: 20px;
+  color: #000000; /* Pitch black text color */
+  text-align: center; /* Center-align text */
+}
+
+.hotel-card {
+  border: 1px solid #ffffff; /* White border for contrast */
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+  text-align: left; /* Reset text alignment for content within hotel cards */
+}
+
+.hotel-card img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.hotel-title {
+  font-size: 24px; /* Larger font size */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hotel-description {
+  color: #666666; /* Dark gray text color */
+}
+
+.hotel-price {
+  font-size: 20px; /* Increased font size */
+  color: #00ff00; /* Light green text color */
+}
+
+body {
+  background-image: url('C:\Users\User\Desktop\sta mpeta\staycation\staycation-frontend\TAL-bora-bora-BTFLISLANDS0623-31533656ca504fe79844d1723b28863d.jpg');
+  background-size: cover; /* Ensure the background image covers the entire viewport */
+  background-position: center; /* Center the background image */
+}
