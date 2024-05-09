@@ -1,3 +1,5 @@
+/* BookARoom.js */
+
 import React, { useState } from 'react';
 import './BookARoom.css';
 import Popup from './Popup'; // Import the Popup component
