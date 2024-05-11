@@ -1,4 +1,3 @@
-// SearchBar.js
 import React, { useState } from 'react';
 import './SearchBar.css'; 
 
@@ -6,9 +5,9 @@ const SearchBar = ({ onSearch }) => {
   const [query, setQuery] = useState('');
   const [checkInDate, setCheckInDate] = useState('');
   const [checkOutDate, setCheckOutDate] = useState('');
-  const [numAdults, setNumAdults] = useState(1); // Default to 1 adult
-  const [numChildren, setNumChildren] = useState(0); // Default to 0 children
-  const [numRooms, setNumRooms] = useState(1); // Default to 1 room
+  const [numAdults, setNumAdults] = useState('1'); // Ensure default value is a string
+  const [numChildren, setNumChildren] = useState('0'); // Ensure default value is a string
+  const [numRooms, setNumRooms] = useState('1'); // Ensure default value is a string
 
   const handleSearch = () => {
     onSearch({ query, checkInDate, checkOutDate, numAdults, numChildren, numRooms });
@@ -54,7 +53,7 @@ const SearchBar = ({ onSearch }) => {
           type="number"
           id="numAdults"
           value={numAdults}
-          onChange={(e) => setNumAdults(parseInt(e.target.value))}
+          onChange={(e) => setNumAdults(e.target.value)}
           min="1"
         />
       </div>
@@ -65,7 +64,7 @@ const SearchBar = ({ onSearch }) => {
           type="number"
           id="numChildren"
           value={numChildren}
-          onChange={(e) => setNumChildren(parseInt(e.target.value))}
+          onChange={(e) => setNumChildren(e.target.value)}
           min="0"
         />
       </div>
@@ -76,7 +75,7 @@ const SearchBar = ({ onSearch }) => {
           type="number"
           id="numRooms"
           value={numRooms}
-          onChange={(e) => setNumRooms(parseInt(e.target.value))}
+          onChange={(e) => setNumRooms(e.target.value)}
           min="1"
         />
       </div>
@@ -86,3 +85,4 @@ const SearchBar = ({ onSearch }) => {
 };
 
 export default SearchBar;
+

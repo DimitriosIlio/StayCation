@@ -1,4 +1,4 @@
-/* Popus.js */
+/* Popup.js */
 
 import React from 'react';
 
