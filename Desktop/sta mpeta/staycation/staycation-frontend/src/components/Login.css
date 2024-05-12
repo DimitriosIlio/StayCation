@@ -1,42 +1,65 @@
-html, body, .App, #root {
-    height: 100%;
-}
+/* Login.css */
 
-.loginWrapper { /* Corrected class name */
-    box-sizing: border-box;
-    width: 100%;
-    padding: 100px;
-    height: 100%;
-}
-
-.loginForm {
-    border-radius: 15px;
-    width: 400px;
-    margin: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
+/* Container styling */
+.loginWrapper {
+    background-image: url('C:\Users\User\Desktop\sta mpeta\staycation\staycation-frontend\TAL-bora-bora-BTFLISLANDS0623-31533656ca504fe79844d1723b28863d.jpg'); /* Set the background image */
+    background-size: cover;
+    background-position: center;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    padding: 30px;
-    background-color: #c6d4d2;
+    height: 100vh;
+  }
+  
+  /* Form styling */
+  .loginForm {
+    width: 400px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background color */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title styling */
+  .loginForm h2 {
+    font-size: 24px;
     font-weight: bold;
-}
-
-.loginForm .element {
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-}
-
-input {
-    margin-top: 10px;
-    background-color: #c6d4d2;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  /* Input styling */
+  .loginForm input[type="email"],
+  .loginForm input[type="password"],
+  .loginForm input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    width: 200px;
-    height: 30px;
-    padding: 5px;
-    color: #3a4c49;
-    border: 3px solid #4f6965d3;
-}
+    font-size: 16px;
+  }
+  
+  /* Button styling */
+  .loginForm button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .loginForm button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Error message styling */
+  .error {
+    color: #ff0000;
+    margin-bottom: 10px;
+  }
+  
