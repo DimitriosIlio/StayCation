@@ -4,14 +4,39 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  color: #000000; /* Pitch black text color */
+  color: #333; /* Dark text color for better readability */
 }
 
 .room {
-  border: 1px solid #020000;
+  border: 1px solid #ddd;
+  border-radius: 5px;
   padding: 20px;
   margin-bottom: 20px;
-  color: #000000; /* Pitch black text color */
+  background-color: #f9f9f9; /* Light background color */
+}
+
+.room h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.room p {
+  margin-bottom: 8px;
+}
+
+.room button {
+  background-color: #007bff; /* Blue background color */
+  color: #fff; /* White text color */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.room button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
 }
 
 .popup {
@@ -23,14 +48,28 @@
   width: 300px;
   padding: 20px;
   text-align: center;
-  color: #060000; /* White text color for better contrast */
+  color: #000; /* Black text color for better contrast */
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
 }
 
 .popup-content {
-  background: #ffffff;
+  background: #fff; /* White background color for popup content */
   padding: 20px;
 }
 
 .popup button {
   margin-top: 10px;
+  background-color: #007bff; /* Blue button color */
+  color: #fff; /* White text color */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.popup button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
 }

@@ -9,8 +9,8 @@ const Hotels = () => {
       <h1 className="page-title">Hotels</h1>
       <div className="hotel-card">
         <div className="hotel-images">
-          <img src="hotel-image-1.jpg" alt="Hotel A" />
-          <img src="hotel-image-2.jpg" alt="Hotel A" />
+          <img src="./hotelA1.jpg" alt="Hotel A" />
+          <img src="./hotelA2.jpeg" alt="Hotel A" />
         </div>
         <h2 className="hotel-title">Metropolitan Suites</h2>
         <p className="hotel-description">Metropolitan Suites offers luxurious accommodation in the heart of the city. With spacious rooms and modern amenities, it's the perfect choice for business travelers and tourists alike.</p>
@@ -21,8 +21,8 @@ const Hotels = () => {
       </div>
       <div className="hotel-card">
         <div className="hotel-images">
-          <img src="hotel-image-3.jpg" alt="Hotel B" />
-          <img src="hotel-image-4.jpg" alt="Hotel B" />
+          <img src="./hotelB1.jpg" alt="Hotel B" />
+          <img src="./hotelB2.webp" alt="Hotel B" />
         </div>
         <h2 className="hotel-title">Oceanic Retreat Resort</h2>
         <p className="hotel-description">Escape to Oceanic Retreat Resort for a rejuvenating beachfront getaway. Indulge in spa treatments, relax by the pool, and enjoy exquisite dining options overlooking the ocean.</p>
@@ -33,8 +33,8 @@ const Hotels = () => {
       </div>
       <div className="hotel-card">
         <div className="hotel-images">
-          <img src="hotel-image-5.jpg" alt="Hotel C" />
-          <img src="hotel-image-6.jpg" alt="Hotel C" />
+          <img src="./hotelC1.jpg" alt="Hotel C" />
+          <img src="./hotelC2.webp" alt="Hotel C" />
         </div>
         <h2 className="hotel-title">Skyline View Hotel</h2>
         <p className="hotel-description">Experience the breathtaking skyline views at Skyline View Hotel. Located in the bustling city center, this hotel offers modern rooms, delicious dining options, and easy access to nearby attractions.</p>
@@ -45,8 +45,8 @@ const Hotels = () => {
       </div>
       <div className="hotel-card">
         <div className="hotel-images">
-          <img src="hotel-image-7.jpg" alt="Hotel D" />
-          <img src="hotel-image-8.jpg" alt="Hotel D" />
+          <img src="./hotelD1.jpg" alt="Hotel D" />
+          <img src="./hotelD2.jpg" alt="Hotel D" />
         </div>
         <h2 className="hotel-title">Sunset Haven Resort</h2>
         <p className="hotel-description">Discover paradise at Sunset Haven Resort. Nestled in a scenic location, this resort offers luxurious accommodations, stunning sunset views, and a wide range of activities for guests of all ages.</p>
@@ -57,10 +57,10 @@ const Hotels = () => {
       </div>
       <div className="hotel-card">
         <div className="hotel-images">
-          <img src="hotel-image-9.jpg" alt="Hotel E" />
-          <img src="hotel-image-10.jpg" alt="Hotel E" />
+          <img src="./hotelE1.jpg" alt="Hotel E" />
+          <img src="./hotelE2.jpg" alt="Hotel E" />
         </div>
-        <h2 className="hotel-title">Hotel E</h2>
+        <h2 className="hotel-title">Suburbian Hotel</h2>
         <p className="hotel-description">Experience luxury and comfort at Hotel E. Located in a peaceful suburban area, this hotel offers elegant rooms, fine dining options, and state-of-the-art conference facilities, making it ideal for business travelers and families alike.</p>
         <p>Location: Suburban area</p>
         <p>Rating: 4.4/5</p>
