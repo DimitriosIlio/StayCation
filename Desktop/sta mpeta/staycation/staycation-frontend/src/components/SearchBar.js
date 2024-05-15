@@ -1,3 +1,6 @@
+
+/* searchbar.js */
+
 import React, { useState } from 'react';
 import './SearchBar.css'; 
 
@@ -84,4 +87,4 @@ const SearchBar = ({ onSearch }) => {
   );
 };
 
-export default SearchBar;
+export default SearchBar; 
