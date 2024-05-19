@@ -110,7 +110,7 @@ export default BookARoom;  */
 
   // BookARoom.js
 
-import React, { useState } from 'react';
+ import React, { useState } from 'react';
 import './BookARoom.css';
 import Popup from './Popup'; // Import the Popup component
 
@@ -126,7 +126,9 @@ const BookARoom = ({ searchCriteria }) => {
       amenities: ['Free Wi-Fi', 'Gym', 'Restaurant'],
       features: ['Queen-sized bed', 'City view', 'Private bathroom'],
       location: 'Downtown area, near shopping centers',
-      specialOffers: ['Stay 3 nights, get 1 night free']
+      specialOffers: ['Stay 3 nights, get 1 night free'],
+      Country: 'Greece',
+      City: 'Athens'
     },
     { 
       id: 2, 
@@ -136,7 +138,9 @@ const BookARoom = ({ searchCriteria }) => {
       amenities: ['Swimming pool', 'Spa', 'Bar'],
       features: ['King-sized bed', 'Ocean view', 'Balcony'],
       location: 'Beachfront property, close to attractions',
-      specialOffers: ['10% off for early bookings']
+      specialOffers: ['10% off for early bookings'],
+      Country: 'Greece',
+      City: 'Athens'
     },
     { 
       id: 3, 
@@ -146,7 +150,9 @@ const BookARoom = ({ searchCriteria }) => {
       amenities: ['Free breakfast', 'Business center', 'Concierge'],
       features: ['Master bedroom', 'Living room', 'Kitchenette'],
       location: 'City center, convenient for business travelers',
-      specialOffers: ['Complimentary airport shuttle']
+      specialOffers: ['Complimentary airport shuttle'],
+      Country: 'Greece',
+      City: 'Athens'
     },
     { 
       id: 4, 
@@ -156,7 +162,9 @@ const BookARoom = ({ searchCriteria }) => {
       amenities: ['Outdoor pool', 'Children’s play area', 'Fitness center'],
       features: ['Two bedrooms', 'Mountain view', 'Private terrace'],
       location: 'Scenic location, ideal for family vacations',
-      specialOffers: ['Family package with complimentary meals']
+      specialOffers: ['Family package with complimentary meals'],
+      Country: 'Greece',
+      City: 'Athens'
     },
     { 
       id: 5, 
@@ -166,7 +174,9 @@ const BookARoom = ({ searchCriteria }) => {
       amenities: ['Spa', 'Restaurant', 'Conference facilities'],
       features: ['King-sized bed', 'Garden view', 'Private balcony'],
       location: 'Suburban area, peaceful surroundings',
-      specialOffers: ['Free spa access with 2-night stay']
+      specialOffers: ['Free spa access with 2-night stay'],
+      Country: 'Greece',
+      City: 'Athens'
     }
   ];
 
@@ -208,4 +218,4 @@ const BookARoom = ({ searchCriteria }) => {
   );
 }
 
-export default BookARoom;
+export default BookARoom;  

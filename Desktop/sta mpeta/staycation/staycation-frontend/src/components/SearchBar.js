@@ -1,23 +1,37 @@
+// SearchBar.js
 
-/* searchbar.js */
+import React, { useContext, useState } from 'react';
+import './SearchBar.css';
+import { GlobalContext } from '../GlobalContext';
+import { useNavigate } from 'react-router-dom';
 
-import React, { useState } from 'react';
-import './SearchBar.css'; 
+const SearchBar = () => {
+  const navigate = useNavigate();
+  const [inputSearchQuery, setInputSearchQuery] = useState("");
+  const [inputCheckInDate, setInputCheckInDate] = useState('');
+  const [inputCheckOutDate, setInputCheckOutDate] = useState('');
+  const [inputNumAdults, setInputNumAdults] = useState('1');
+  const [inputNumChildren, setInputNumChildren] = useState('0');
+  const [inputNumRooms, setInputNumRooms] = useState('1');
 
-const SearchBar = ({ onSearch }) => {
-  const [query, setQuery] = useState('');
-  const [checkInDate, setCheckInDate] = useState('');
-  const [checkOutDate, setCheckOutDate] = useState('');
-  const [numAdults, setNumAdults] = useState('1'); // Ensure default value is a string
-  const [numChildren, setNumChildren] = useState('0'); // Ensure default value is a string
-  const [numRooms, setNumRooms] = useState('1'); // Ensure default value is a string
+  const {
+    setSearchQuery, setCheckInDate, setCheckOutDate,
+    setNumAdults, setNumChildren, setNumRooms
+  } = useContext(GlobalContext);
 
-  const handleSearch = () => {
-    onSearch({ query, checkInDate, checkOutDate, numAdults, numChildren, numRooms });
+  const submitForm = (e) => {
+    e.preventDefault();
+    setSearchQuery(inputSearchQuery);
+    setCheckInDate(inputCheckInDate);
+    setCheckOutDate(inputCheckOutDate);
+    setNumAdults(inputNumAdults);
+    setNumChildren(inputNumChildren);
+    setNumRooms(inputNumRooms);
+    navigate("/book-a-room");
   };
 
   return (
-    <div className="search-bar-container">
+    <form onSubmit={submitForm} className="search-bar-container">
       <div className="search-bar-input-wrapper">
         <label htmlFor="query">Search hotels:</label>
         <input
@@ -25,8 +39,8 @@ const SearchBar = ({ onSearch }) => {
           type="text"
           id="query"
           placeholder="Enter a location or hotel name"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          value={inputSearchQuery}
+          onChange={(e) => setInputSearchQuery(e.target.value)}
         />
       </div>
       <div className="search-bar-input-wrapper">
@@ -35,8 +49,8 @@ const SearchBar = ({ onSearch }) => {
           className="search-bar-input"
           type="date"
           id="checkInDate"
-          value={checkInDate}
-          onChange={(e) => setCheckInDate(e.target.value)}
+          value={inputCheckInDate}
+          onChange={(e) => setInputCheckInDate(e.target.value)}
         />
       </div>
       <div className="search-bar-input-wrapper">
@@ -45,8 +59,8 @@ const SearchBar = ({ onSearch }) => {
           className="search-bar-input"
           type="date"
           id="checkOutDate"
-          value={checkOutDate}
-          onChange={(e) => setCheckOutDate(e.target.value)}
+          value={inputCheckOutDate}
+          onChange={(e) => setInputCheckOutDate(e.target.value)}
         />
       </div>
       <div className="search-bar-input-wrapper">
@@ -55,8 +69,8 @@ const SearchBar = ({ onSearch }) => {
           className="search-bar-input"
           type="number"
           id="numAdults"
-          value={numAdults}
-          onChange={(e) => setNumAdults(e.target.value)}
+          value={inputNumAdults}
+          onChange={(e) => setInputNumAdults(e.target.value)}
           min="1"
         />
       </div>
@@ -66,8 +80,8 @@ const SearchBar = ({ onSearch }) => {
           className="search-bar-input"
           type="number"
           id="numChildren"
-          value={numChildren}
-          onChange={(e) => setNumChildren(e.target.value)}
+          value={inputNumChildren}
+          onChange={(e) => setInputNumChildren(e.target.value)}
           min="0"
         />
       </div>
@@ -77,14 +91,14 @@ const SearchBar = ({ onSearch }) => {
           className="search-bar-input"
           type="number"
           id="numRooms"
-          value={numRooms}
-          onChange={(e) => setNumRooms(e.target.value)}
+          value={inputNumRooms}
+          onChange={(e) => setInputNumRooms(e.target.value)}
           min="1"
         />
       </div>
-      <button className="search-bar-button" onClick={handleSearch}>Search</button>
-    </div>
+      <button type="submit" className="search-bar-button">Search</button>
+    </form>
   );
 };
 
-export default SearchBar; 
+export default SearchBar;
