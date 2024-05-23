@@ -12,6 +12,7 @@ import SearchBar from "./components/SearchBar";
 import Footer from "./components/Footer"; 
 import { GlobalProvider } from './GlobalContext';
 
+
 function App() {
   return (
     <Router>

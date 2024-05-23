@@ -1,5 +1,7 @@
 // SearchBar.js
 
+// SearchBar.js
+
 import React, { useContext, useState } from 'react';
 import './SearchBar.css';
 import { GlobalContext } from '../GlobalContext';
@@ -27,7 +29,17 @@ const SearchBar = () => {
     setNumAdults(inputNumAdults);
     setNumChildren(inputNumChildren);
     setNumRooms(inputNumRooms);
-    navigate("/book-a-room");
+
+    const searchCriteria = {
+      searchQuery: inputSearchQuery,
+      checkInDate: inputCheckInDate,
+      checkOutDate: inputCheckOutDate,
+      numAdults: inputNumAdults,
+      numChildren: inputNumChildren,
+      numRooms: inputNumRooms
+    };
+
+    navigate("/book-a-room", { state: { searchCriteria } });
   };
 
   return (
